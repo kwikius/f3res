@@ -1,0 +1,30 @@
+
+
+wing {
+   panels {
+      [0] {
+         type = "linear-tapered";
+         resample = 100; // the number of points to provide on an aerofoil
+         dihedral = 0.0 deg; 
+         sections{
+            [0] {
+               aerofoil = "/home/andy/cpp/projects/aerofoil/Sections/selig/NACA64009.dat";
+               origin = [0.0,0.0]; 
+               chord = 80.0 mm;
+               position = [0.0 mm, 0.0 mm,0.0 mm]; // position of aerofoil origin on x, y, z axes
+               incidence = 0.0 deg;
+               te_thickness = 0.0 mm;
+            }
+            [1] {
+               aerofoil = "/home/andy/cpp/projects/aerofoil/Sections/selig/NACA64009.dat";
+               origin = [0.0,0.0];
+               chord = 80 mm;
+               position = [0.0 mm, 300.0 mm, 0.0 mm];
+               incidence = 0.0 deg; //  positive angle lowers le
+               te_thickness = 0.0 mm;
+            }
+         }
+        
+      }
+   }
+}

@@ -1,0 +1,30 @@
+
+
+wing {
+   panels {
+      [0] {
+         type = "linear-tapered"; // linear tapered panel consisting of two sections
+         resample = 200; // the number of points to provide around the inner and outer aerofoils
+         dihedral = 0 deg; // trying to get it to sit flat on the board
+         sections{
+           
+            [0] {
+               aerofoil = "/home/andy/cpp/projects/aerofoil/Sections/selig/ag17.dat";
+               incidence = -0.13 deg;  //want to try to get it to sit flat on the board
+               origin = [0.0,0.0]; // origin of airfoil relative to Le point
+               chord = 190.0 mm;
+               position = [6.667 mm, 0.0 mm, 0.0 mm]; // position of aerofoil origin on x, y, z axes
+               te_thickness = 0 mm; //add a finite trailing edge thickness
+            }
+            [1] { 
+               aerofoil = "/home/andy/cpp/projects/aerofoil/Sections/selig/ag18.dat";
+               origin = [0.0,0.0]; // origin of airfoil relative to Le point
+               chord = 130.0 mm;
+               position = [26.667 mm, 400.0 mm, 0.0 mm]; // position of aerofoil origin on x, y, z axes
+               incidence = -0.24 deg;  //want to try to get it to sit flat on the board
+               te_thickness = 0 mm; //add a finite trailing edge thickness
+            }
+         }
+      }
+   }
+}
