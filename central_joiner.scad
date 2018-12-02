@@ -229,16 +229,12 @@ module upper_skin(){
    };
 }
 
-
 module wing_ribs(){
    intersection(){
       rib_blanks();
       wing_unskinned(0.8);
    }
 }
-
-
-
 
 module lower_skin(){
    difference(){
@@ -260,10 +256,70 @@ module lower_skin(){
    }
 }
 
+module te_blank(){
+   x = 25;
+   y =500;
+   z = 2;
+   bev = 5;
+   pts = [
+         [0,-0.2],
+         [bev,-z/2],
+         [x,-z/2],
+         [x,z/2],
+         [bev,z/2],
+         [0,0.2],
+         [0,-0.2]
+   ];
+   translate([172,y,1.9]){
+      rotate([0,0,1.6]){
+      rotate([0,3,0]){
+        rotate([90.05,0,0]){
+            linear_extrude( height = y +5){
+              polygon(points = pts);
+            }
+        }
+        // cube([20,250,2]);
+      }
+      }
+   }
+}
+
+module trailing_edge(){
+   intersection(){
+     te_blank();
+     panel0();
+   }
+}
+
+module le_blank()
+{
+   translate([-4,0,-4]){
+      rotate([0,0,-0.8]){
+         cube([10,1010,10]);
+      }
+   }
+}
+
+
+module leading_edge(){
+   intersection(){
+      le_blank();
+      panel0();
+   }
+}
+
 wing_ribs();
 main_spar();
 upper_skin();
 lower_skin();
+leading_edge();
+trailing_edge();
+
+
+
+
+
+
 
 
 
