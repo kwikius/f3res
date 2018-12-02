@@ -99,7 +99,7 @@ module wing_upper_skin(thickness, xoffset = 0, yoffset = 0){
 module wing_lower_skin(thickness, xoffset = 0, yoffset = 0){
     difference(){
        wing_lower_surface_shape(thickness + 1){ children();}
-       translate([xoffset,-yoffset,thickness]){
+              translate([xoffset,-yoffset,thickness]){
           wing_lower_surface_shape(thickness + 1){ children();}
        }
     }

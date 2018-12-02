@@ -127,7 +127,7 @@ module wing(){
 }
 
 module tailplane_half(){
-   v_tail_dihedral = 35;
+ 
    size = 0.85;
    
    translate([-85,0,-30]){
