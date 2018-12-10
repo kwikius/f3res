@@ -181,26 +181,26 @@ module tail()
 
 wing_color = [0.7,0.6,1];
 fuse_color = [1,0.6,0.7];
-   module whole_plane() {
-      translate([80,0,0]){
-         color(fuse_color){
-            translate([-30,0,-10]){
-               fuselage_pod();
-            }
+module whole_plane() {
+   translate([80,0,0]){
+     // color(fuse_color){
+         translate([-30,0,-10]){
+           % fuselage_pod();
          }
-         color(wing_color){
-            translate([-4,0,0]){
-               rotate([0,-wing_incidence,0]){
-                  wing();
-                  mirror([0,1,0]){wing();}
-               }
+     // }
+      color(wing_color){
+         translate([-4,0,0]){
+            rotate([0,-wing_incidence,0]){
+               wing();
+               mirror([0,1,0]){wing();}
             }
-         }
-         color(wing_color){
-            tail();
          }
       }
+      color(wing_color){
+         tail();
+      }
    }
+}
 
    whole_plane();
  
